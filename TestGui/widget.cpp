@@ -3,6 +3,22 @@
 #include <QFile>
 #include <QDebug>
 
+QString tab( int count = 1 )
+{
+    QString _t = "\t";
+    for( int i = 1; i < count; i++ )
+        _t.append( "\t" );
+    return _t;
+}
+
+QString enter( int count = 1 )
+{
+    QString _t = "\n";
+    for( int i = 1; i < count; i++ )
+        _t.append( "\n" );
+    return _t;
+}
+
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
@@ -78,24 +94,34 @@ void Widget::writeFile()
         qDebug() << "Error open file main.cpp";
 
     QString _text;
-    _text += "#include <iostream>\n\n";
-    _text += "int main()\n";
-    _text += "{\n";
-    _text += "\tint mas[10];\n";
-    _text += "\tfor( int i = 0; i < 10; i++ )\n";
-    _text += "\t{\n";
-    _text += "\t\tmas[i] = i;\n";
-    _text += "\t\tstd::cout << mas[i] << std::endl;\n";
-    _text += "\t}\n";
-    _text += "\treturn 0;\n";
-    _text += "}\n";
-
+    _text += "#include <iostream>" + enter(2);
+    _text += ui->textEdit->toPlainText();
+    _text += enter(2);
+    _text += "int main()" + enter();
+    _text += "{" + enter();
+    _text += tab() + "for( int i = 100; i < 200; i++ )" + enter();
+    _text += tab() + "{" + enter();
+    _text += tab(2) + "for( int j = 200; j <=300; j++ )" + enter();
+    _text += tab(2) + "{" + enter();
+    _text += tab(3) + "int c = func( i, j );" + enter();
+    _text += tab(3) + "if( ( c>= 200 ) && ( c <=400 ) )" +enter();
+    _text += tab(3) + "{" + enter();
+    _text += tab(4) + "std::cout << i << \" \" << j << \" \" << c << \" - \" << \"Ok!\" << std::endl;"  + enter();
+    _text += tab(3) + "}" + enter();
+    _text += tab(3) + "else" + enter();
+    _text += tab(3) + "{" + enter();
+    _text += tab(4) + "std::cout << i << \" \" << j << \" \" << c << \" - \" << \"Error!\" << std::endl;"  + enter();
+    _text += tab(3) + "}" + enter();
+    _text += tab(2) + "}" + enter();
+    _text += tab(1) + "}" + enter();
+    _text += "}" + enter();
     _file.write( _text.toLocal8Bit() );
     _file.close();
 }
 
 
-
+//  _text +=  ;
+//  _text += ""
 
 
 
