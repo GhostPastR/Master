@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        widget.cpp
+        widget.cpp \
+    sinitsystem.cpp
 
 HEADERS += \
-        widget.h
+        widget.h \
+    sinitsystem.h
 
 FORMS += \
         widget.ui

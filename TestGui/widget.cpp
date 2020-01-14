@@ -25,12 +25,12 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
     this->processTest_ = new QProcess( this );
-    connect( this->processTest_, SIGNAL(readyReadStandardOutput()),
-             this, SLOT(slotReadOutput()) );
-    connect( this->processTest_, SIGNAL(readyReadStandardError()),
-             this, SLOT(slotReadError()) );
-    connect( this->processTest_, SIGNAL(errorOccurred(QProcess::ProcessError)),
-             this, SLOT(slotError(QProcess::ProcessError)));
+    connect( this->processTest_, &QProcess::readyReadStandardOutput,
+             this, &Widget::slotReadOutput );
+    connect( this->processTest_, &QProcess::readyReadStandardError,
+             this, &Widget::slotReadError );
+    connect( this->processTest_, &QProcess::errorOccurred,
+             this, &Widget::slotError );
 }
 
 Widget::~Widget()
