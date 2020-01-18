@@ -27,11 +27,15 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         widget.cpp \
-    sinitsystem.cpp
+    sinitsystem.cpp \
+    configparsing.cpp \
+    typesystemparsing.cpp
 
 HEADERS += \
         widget.h \
-    sinitsystem.h
+    sinitsystem.h \
+    configparsing.h \
+    typesystemparsing.h
 
 FORMS += \
         widget.ui
