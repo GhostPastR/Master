@@ -1,0 +1,122 @@
+void;
+bool;
+char{
+	unsigned,
+	signed,
+};
+wchar_t;
+char16_t;
+char32_t;
+int{
+	signed{
+		short,
+		long{
+			long,
+		},
+	},
+	unsigned{
+		short,
+		long{
+			long,
+		},
+	},
+	short{
+		signed,
+		unsigned,
+	},
+	long{
+		signed{
+			long,
+		},
+		unsigned{
+			long,
+		},
+	},
+};
+signed{
+	char,
+	int{
+		short,
+		long{
+			long,
+		},
+	},
+	short{
+		int,
+	},
+	long{
+		int{
+			long,
+		},
+	},
+};
+unsigned{
+	char,
+	int{
+		short,
+		long{
+			long,
+		},
+	},
+	short{
+		int,
+	},
+	long{
+		int{
+			long,
+		},
+	},
+};
+short{
+	signed{
+		int,
+	},
+	unsigned{
+		int,
+	},
+	int{
+		signed,
+		unsigned,
+	},
+};
+long{
+	signed{
+		int{
+			long,
+		},
+	},
+	unsigned{
+		int{
+			long,
+		},
+	},
+	int{
+		signed{
+			long,
+		},
+		unsigned{
+			long,
+		},
+		long{
+			signed,
+			unsigned,
+		}
+	},
+	long{
+		signed{
+			int,
+		},
+		unsigned{
+			int,
+		},
+		int{
+			signed,
+			unsigned,
+		},
+	},
+	double,
+};
+float;
+double{
+	long,
+};

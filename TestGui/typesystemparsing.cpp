@@ -121,7 +121,7 @@ QStringList TypeSystemParsing::split( const QString &text,
 
 bool TypeSystemParsing::checkType( const QString &nameType ) const
 {
-    return nameType.contains( QRegExp( "[^a-zA-Z_]" ) );
+    return nameType.contains( QRegExp( "[^a-zA-Z0-9_]" ) );
 }
 
 bool TypeSystemParsing::checkCramp( const QString &text ) const

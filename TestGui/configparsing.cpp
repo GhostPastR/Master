@@ -125,7 +125,8 @@ QMap<QString, QString> ConfigParsing::keyValueParsing( QStringList keyValue,
             return _parametr;
         if( !this->checkValue( _type.last() ) )
             return _parametr;
-        _type.last().remove( 0, 1 ).remove( _type.last().count() - 1, 1 );
+        _type.last().remove( 0, 1 );
+        _type.last().remove( _type.last().count() - 1, 1 );
         _keyValue.append( _type );
     }
     for( const auto &i : _keyValue )
