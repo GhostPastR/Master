@@ -29,13 +29,17 @@ SOURCES += \
         widget.cpp \
     sinitsystem.cpp \
     configparsing.cpp \
-    typesystemparsing.cpp
+    typesystemparsing.cpp \
+    typesystem.cpp \
+    testedmethod.cpp
 
 HEADERS += \
         widget.h \
     sinitsystem.h \
     configparsing.h \
-    typesystemparsing.h
+    typesystemparsing.h \
+    typesystem.h \
+    testedmethod.h
 
 FORMS += \
         widget.ui
